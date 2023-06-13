@@ -1,8 +1,8 @@
-const open = require('open');
-const chalk = require('chalk');
-const fetch = require('node-fetch');
+import open from 'open';
+import chalk from 'chalk';
+import fetch from 'node-fetch';
 
-const {
+import {
   exit,
   readFile,
   writeFile,
@@ -14,9 +14,9 @@ const {
   isLowerCaseEqual,
   isRegistryNotFound,
   isInternalRegistry,
-} = require('./helpers');
+} from './helpers.js';
 
-const { NRMRC, NPMRC, AUTH, EMAIL, ALWAYS_AUTH, REPOSITORY, REGISTRY, HOME } = require('./constants');
+import { NRMRC, NPMRC, AUTH, EMAIL, ALWAYS_AUTH, REPOSITORY, REGISTRY, HOME } from './constants.js';
 
 async function onList() {
   const currentRegistry = await getCurrentRegistry();
@@ -278,7 +278,7 @@ async function onTest(target) {
   return messages;
 }
 
-module.exports = {
+export default {
   onList,
   onCurrent,
   onUse,

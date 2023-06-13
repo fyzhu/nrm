@@ -1,2 +1,2 @@
 // export process for mock
-module.exports = global.process;
+export default global.process;

@@ -1,9 +1,9 @@
-const fs = require('fs');
-const ini = require('ini');
-const chalk = require('chalk');
-const process = require('./process');
+import fs from 'fs';
+import ini from 'ini';
+import chalk from 'chalk';
+import process from './process.js';
 
-const { NRMRC, NPMRC, REGISTRY, REGISTRIES } = require('./constants');
+import { NRMRC, NPMRC, REGISTRY, REGISTRIES } from './constants.js';
 
 async function readFile(file) {
   return new Promise(resolve => {
@@ -94,7 +94,7 @@ function exit(error) {
   process.exit(1);
 }
 
-module.exports = {
+export {
   exit,
   geneDashLine,
   printError,

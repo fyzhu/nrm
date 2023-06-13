@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const actions = require('./actions');
-const PKG = require('./package.json');
-const { program } = require('commander');
+import actions from './actions.js'
+import PKG from './package.json' assert { type: "json" };
+import { program } from 'commander';
 
 program
   .version(PKG.version);
